@@ -56,9 +56,6 @@ function App() {
             <div id='preloader'></div>
           ) : (
             <header className='App-header'>
-              <p>
-                Edit hello <code>src/App.tsx</code> and save to reload.
-              </p>
               <ul className='card-container'>
                 {cryptoReferrals.map((cryptoReferral: ICryptoReferrals) => {
                   return (
@@ -73,14 +70,6 @@ function App() {
                   );
                 })}
               </ul>
-              <a
-                className='App-link'
-                href='https://reactjs.org'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Learn React
-              </a>
             </header>
           )}
         </div>
