@@ -56,6 +56,17 @@ function App() {
             <div id='preloader'></div>
           ) : (
             <header className='App-header'>
+              <h1>
+                The Top Asian Crypto Exchanges to Buy and Sell BTC and Altcoins
+              </h1>
+              <p>
+                In Asia, where the cryptocurrency market is expanding quickly,
+                selecting the appropriate cryptocurrency exchange is an
+                essential first step for traders. With so many exchanges out
+                there, each with unique features, costs, and security protocols,
+                choosing the ideal platform can make all the difference in the
+                world to your trading success.
+              </p>
               <ul className='card-container'>
                 {cryptoReferrals.map((cryptoReferral: ICryptoReferrals) => {
                   return (
