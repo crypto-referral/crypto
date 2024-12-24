@@ -1,3 +1,15 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #282c34;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px; /* Adjust based on your header height */
+}
+
 .App {
   text-align: center;
 }
@@ -40,4 +52,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* styles.css */
+.no-padding {
+  padding: 0 !important; /* Ensure padding is removed */
 }

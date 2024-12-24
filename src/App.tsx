@@ -8,6 +8,8 @@ import { request } from 'graphql-request';
 import './App.css';
 import CryptoCard from './components/CryptoCard/CryptoCard'; // Adjust the path as necessary
 import { ICryptoReferrals } from './interfaces/ICryptoReferral';
+import StickyHeader from './components/StickyHeader/StickyHeader'; // Adjust the path as necessary
+import { Container, Box } from '@mui/material';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,39 +48,44 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      {loading ? (
-        <div id='preloader'></div>
-      ) : (
-        <header className='App-header'>
-          <p>
-            Edit hello <code>src/App.tsx</code> and save to reload.
-          </p>
-          <ul className='card-container'>
-            {cryptoReferrals.map((cryptoReferral: ICryptoReferrals) => {
-              return (
-                <li>
-                  <CryptoCard
-                    title={cryptoReferral.title}
-                    imageUrl={cryptoReferral.cryptoImage.url}
-                    description={cryptoReferral.description}
-                    referralLink={cryptoReferral.referralLink}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-        </header>
-      )}
-    </div>
+    <Container maxWidth={false} disableGutters>
+      <StickyHeader />
+      <Box>
+        <div className='App'>
+          {loading ? (
+            <div id='preloader'></div>
+          ) : (
+            <header className='App-header'>
+              <p>
+                Edit hello <code>src/App.tsx</code> and save to reload.
+              </p>
+              <ul className='card-container'>
+                {cryptoReferrals.map((cryptoReferral: ICryptoReferrals) => {
+                  return (
+                    <li>
+                      <CryptoCard
+                        title={cryptoReferral.title}
+                        imageUrl={cryptoReferral.cryptoImage.url}
+                        description={cryptoReferral.description}
+                        referralLink={cryptoReferral.referralLink}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+              <a
+                className='App-link'
+                href='https://reactjs.org'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Learn React
+              </a>
+            </header>
+          )}
+        </div>
+      </Box>
+    </Container>
   );
 }
 
